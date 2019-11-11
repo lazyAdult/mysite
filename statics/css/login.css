@@ -1,0 +1,93 @@
+.login_box{
+    display: block;
+    width:600px;
+    /* border: 1px solid red; height:400px;*/
+    background: url("../images/background.jpg") center/200% no-repeat  ;
+    padding: 50px;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    margin-left: -300px;
+}
+
+h1{
+    /* background: red; */
+    text-align: center;
+    font: bold 50px/70px  'Microsoft Yahei';
+}
+
+label{
+    font: bold 30px/50px 'Microsoft Yahei';
+    margin: 10px 0px;
+
+}
+
+input{
+    display: block;
+    width: 50%;
+    height:40px;
+    margin-left: 0px;
+}
+
+#username, #password{
+    display: block;
+    width: 100%;
+    height:50px;
+}
+
+img{
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+}
+
+#password{
+    margin-bottom: 20px;
+}
+
+/* 设置placeholder的字体大小 */
+#username ,#password::-webkit-input-placeholder{
+    font-size: 20px;
+}
+
+.new_register {
+    float: left;
+    font: normal 20px/140px 'Microsoft Yahei';
+    color: rgb(201, 211, 62);
+    text-decoration-style: solid ;
+    text-decoration-color: gold;
+}
+
+button{
+    display: block;
+    float:right;
+    background: blue;
+    font: bold 30px/50px 'Microsoft Yahei';
+    color:white;
+    margin-top: 30px;
+    border: 0px;
+    padding:6px 20px;
+}
+
+button:hover{
+    background: green;
+    color: black;
+}
+
+.new_register:hover{
+    color: red;
+}
+
+.error_message{
+    color: red;
+    text-align: center;
+    border-radius: 5%;
+    font-size: 20px;
+}
+
+/* 对于captcha的错误信息返回的是一个列表 ul默认的属性是errorlist */
+.errorlist{
+    text-align: center;
+    color:red;
+    font-size: 20px;
+}

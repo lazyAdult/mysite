@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--上面的meta标签必须放在最前面,任何其他东西都必须随其后-->
+    <title>注册</title>
+    <!-- 导入bootstrap css -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/register.css' %}" rel="stylesheet">
+    <title>注册</title>
+</head>
+<body>
+<div class="container">
+    <div class="col">
+        <form class="form-register" action="{% url 'login:register' %}" method="post">
+
+            {% if register_form.captcha.errors %}
+                <div class="alert alert-warning">{{ register_form.captcha.errors }}</div>
+            {% else %}
+                <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+
+            {% csrf_token %}
+            <h3 class="text-center">欢迎注册</h3>
+
+            <div class="form-group">
+                {{ register_form.username.label_tag }}
+                {{ register_form.username }}
+            </div>
+
+            <div class="form-group">
+                {{ register_form.password1.label_tag }}
+                {{ register_form.password1 }}
+            </div>
+
+            <div class="form-group">
+                {{ register_form.password2.label_tag }}
+                {{ register_form.password2 }}
+            </div>
+
+            <div class="form-group">
+                {{ register_form.email.label_tag }}
+                {{ register_form.email }}
+            </div>
+
+            <div class="form-group">
+                {{ register_form.sex.label_tag }}
+                {{ register_form.sex }}
+            </div>
+
+            <div class="form-group">
+                {{ register_form.captcha.label_tag }}
+                {{ register_form.captcha }}
+            </div>
+
+            <div>
+                <a href="{% url 'login:login' %}">直接登录</a>
+                <button type="submit" class="btn btn-primary float-right">注册</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+        <!-- 由于Bootstrap依赖JQuery，所以我们也需要使用CDN引用JQuery 3.3.1: -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <!-- 另外，从Bootstrap4开始，额外需要popper.js的支持，依旧使用CDN的方式引入: -->
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+        <!-- 导入bootstrap js -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
